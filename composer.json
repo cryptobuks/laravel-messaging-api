@@ -1,5 +1,5 @@
 {
-    "name": "leavinstone/messaging_api",
+    "name": "leavingstone/messaging_api",
     "description": "Messaging API for laravel",
     "type": "library",
     "keywords": ["messaging api", "mobile service", "laravel", "php", "mobile", "leavingstone"],
