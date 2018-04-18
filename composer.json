@@ -2,7 +2,7 @@
     "name": "leavinstone/messaging_api",
     "description": "Messaging API for laravel",
     "type": "library",
-    "keywords": ["messaging api", "mobile service"],
+    "keywords": ["messaging api", "mobile service", "laravel", "php", "mobile", "leavingstone"],
     "homepage": "https://github.com/oalkhanishvili/laravel-messaging-api",
     "authors": [
         {
@@ -10,5 +10,20 @@
             "email": "oto@geolab.edu.ge"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^7.0",
+        "illuminate/http": "~5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Leavingstone\\MessagingApi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Leavingstone\\MessagingApi\\Providers\\MessagingApiServiceProvider"
+            ]
+        }
+    }
 }
