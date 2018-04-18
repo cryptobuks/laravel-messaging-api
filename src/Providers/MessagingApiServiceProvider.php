@@ -15,7 +15,6 @@ class MessagingApiServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         $this->commands([
             PublishCommand::class,
             CreateServiceCommand::class
