@@ -59,7 +59,7 @@ class PublishCommand extends Command
         $content = $files->get(__DIR__ . '/../console/controller.stub');
 
         $className = 'MessagingApiController';
-        $path = app_path() . '/Http/Controllers/Messaging2';
+        $path = app_path() . '/Http/Controllers/Messaging';
         if (! $files->isDirectory(($path))) {
             $files->makeDirectory(($path), 0777, true, true);
         }
@@ -76,7 +76,7 @@ class PublishCommand extends Command
         $content = $files->get(__DIR__ . '/../console/methodEnum.stub');
 
         $className = 'MethodsEnum';
-        $path = app_path() . '/MessagingApi2';
+        $path = app_path() . '/MessagingApi';
         if (! $files->isDirectory(($path))) {
             $files->makeDirectory(($path), 0777, true, true);
         }
