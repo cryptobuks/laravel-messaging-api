@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers\Messaging;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Leavingstone\MessagingApi\Base\MessagingRequestHandler;
+
+class MessagingApiController extends Controller
+{
+    protected function index(Request $request)
+    {
+        $messagingApi = new MessagingRequestHandler($request);
+        return $messagingApi->getResponseObject();
+    }
+}

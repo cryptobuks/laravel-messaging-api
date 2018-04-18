@@ -1,0 +1,10 @@
+<?php
+
+namespace App\MessagingApi\Services{##NAMESPACE##};
+
+use Leavingstone\MessagingApi\Contracts\MessagingApiMethodInterface;
+
+class {##CLASS##} implements MessagingApiMethodInterface {
+    public function handle() {
+    }
+}

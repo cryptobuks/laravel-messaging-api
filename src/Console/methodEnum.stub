@@ -1,0 +1,25 @@
+<?php
+
+namespace App\MessagingApi;
+
+use Leavingstone\MessagingApi\Util\MethodWrapper;
+
+abstract class MethodsEnum {
+    /**
+     *  className - Class name in app/MessagingApi/Services directory ex. 'TestService'
+     *  If there is sub-directory than name will be 'Directory/TestService'
+     *
+     *  responseMethod - Is a response method number. Usually if request method is 1
+     *  than response method number for this number will be 2
+     */
+    const MethodList = [
+        1 => [
+            'className'      => 'ClassName',
+            'responseMethod' => 2
+        ]
+    ];
+
+    public static function getMethod($method) {
+        return new MethodWrapper(self::MethodList[$method]);
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "leavinstone/messaging_api",
+    "description": "Messaging API for laravel",
+    "type": "library",
+    "keywords": ["messaging api", "mobile service"],
+    "homepage": "https://github.com/oalkhanishvili/laravel-messaging-api",
+    "authors": [
+        {
+            "name": "Oto alkhanishvili",
+            "email": "oto@geolab.edu.ge"
+        }
+    ],
+    "require": {}
+}
