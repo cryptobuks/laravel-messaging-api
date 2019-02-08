@@ -25,4 +25,9 @@ class MethodWrapper
     {
         return @$this->method['auth'] === true;
     }
+
+    public function getScopes()
+    {
+        return $this->method['token_scopes'] ?? [];
+    }
 }
