@@ -54,13 +54,15 @@ class PublishCommand extends Command
         $this->call('vendor:publish', $args);
         $this->info('Display this on the screen ' . $className);
     }
-    protected function createController() {
+
+    protected function createController()
+    {
         $files = new Filesystem();
         $content = $files->get(__DIR__ . '/../console/controller.stub');
 
         $className = 'MessagingApiController';
         $path = app_path() . '/Http/Controllers/Messaging';
-        if (! $files->isDirectory(($path))) {
+        if (!$files->isDirectory(($path))) {
             $files->makeDirectory(($path), 0777, true, true);
         }
         $file = $path . '/' . $className . '.php';
@@ -71,13 +73,15 @@ class PublishCommand extends Command
             $this->info('Display this on the screen ' . $className);
         }
     }
-    protected function createServiceDir() {
+
+    protected function createServiceDir()
+    {
         $files = new Filesystem();
         $content = $files->get(__DIR__ . '/../console/methodEnum.stub');
 
         $className = 'MethodsEnum';
         $path = app_path() . '/MessagingApi';
-        if (! $files->isDirectory(($path))) {
+        if (!$files->isDirectory(($path))) {
             $files->makeDirectory(($path), 0777, true, true);
         }
         $file = $path . '/' . $className . '.php';

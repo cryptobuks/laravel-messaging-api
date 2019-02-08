@@ -2,15 +2,18 @@
 
 namespace Leavingstone\MessagingApi\Util;
 
-class ResponseObject {
-    public function __construct($method, $messageId, $response, $errorCode = 0) {
+class ResponseObject
+{
+    public function __construct($method, $messageId, $response, $errorCode = 0)
+    {
         $this->method = $method;
         $this->messageId = $messageId;
         $this->errorCode = $errorCode;
         $this->response = $response;
     }
 
-    public function get() {
+    public function get()
+    {
         $obj = [
             'method'    => $this->method,
             'params'    => $this->response,

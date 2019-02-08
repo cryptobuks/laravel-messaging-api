@@ -53,7 +53,7 @@ class CreateServiceCommand extends Command
         $content = str_replace('{##CLASS##}', $className, $content);
         $content = str_replace('{##NAMESPACE##}', $this->getNamespace($components), $content);
         $path = app_path() . '/MessagingApi/Services/' . $subPath;
-        if (! $files->isDirectory(($path))) {
+        if (!$files->isDirectory(($path))) {
             $files->makeDirectory(($path), 0777, true, true);
         }
         $file = $path . '/' . $className . '.php';
@@ -65,8 +65,10 @@ class CreateServiceCommand extends Command
         }
 
     }
-    private function getNamespace($components) {
-        $namespace = implode("\\" , $components);
+
+    private function getNamespace($components)
+    {
+        $namespace = implode("\\", $components);
         if ($namespace) {
             return "\\$namespace";
         }

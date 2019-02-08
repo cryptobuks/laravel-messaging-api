@@ -4,7 +4,8 @@ namespace App\MessagingApi;
 
 use Leavingstone\MessagingApi\Util\MethodWrapper;
 
-abstract class MethodsEnum {
+abstract class MethodsEnum
+ {
     /**
      *  className - Class name in app/MessagingApi/Services directory ex. 'TestService'
      *  If there is sub-directory than name will be 'Directory/TestService'
@@ -19,7 +20,8 @@ abstract class MethodsEnum {
         ]
     ];
 
-    public static function getMethod($method) {
+    public static function getMethod($method)
+    {
         return new MethodWrapper(self::MethodList[$method]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Leavingstone\MessagingApi\Contracts;
 
-interface MessagingApiMethodInterface {
+interface MessagingApiMethodInterface
+{
     public function handle();
 }
