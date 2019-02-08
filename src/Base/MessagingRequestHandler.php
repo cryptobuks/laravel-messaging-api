@@ -16,7 +16,7 @@ class MessagingRequestHandler {
         $this->request = $request;
         $methodContract = MethodsEnum::getMethod($request->get('method'));
         $this->contract = $methodContract;
-        $instance = "App\\MessagingApi\\Services\\" . ucfirst($methodContract->getClassName());
+        $instance = $methodContract->getClassName();
 
         $this->factory(new $instance($request, $methodContract));
     }
