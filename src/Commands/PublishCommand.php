@@ -41,18 +41,7 @@ class PublishCommand extends Command
     {
         $this->createController();
         $this->createServiceDir();
-
-        exit;
-        $args = [
-            '--provider' => TestProvider::class
-        ];
-        $className = $this->argument('className');
-        if (!$className) {
-            $className = 'MethodsList';
-        }
-        $className = ucwords($className);
-        $this->call('vendor:publish', $args);
-        $this->info('Display this on the screen ' . $className);
+        $this->createException();
     }
 
     protected function createController()
@@ -73,7 +62,24 @@ class PublishCommand extends Command
             $this->info('Display this on the screen ' . $className);
         }
     }
+    protected function createException()
+    {
+        $files = new Filesystem();
+        $content = $files->get(__DIR__ . '/../console/apiException.stub.stub');
 
+        $className = 'ApiException';
+        $path = app_path() . '/Exception';
+        if (!$files->isDirectory(($path))) {
+            $files->makeDirectory(($path), 0777, true, true);
+        }
+        $file = $path . '/' . $className . '.php';
+        if ($files->isFile($file)) {
+            $this->info('File already exists ' . $className);
+        } else {
+            $files->put($file, $content);
+            $this->info('Display this on the screen ' . $className);
+        }
+    }
     protected function createServiceDir()
     {
         $files = new Filesystem();

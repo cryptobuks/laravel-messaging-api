@@ -8,8 +8,8 @@ class ResponseObject
     {
         $this->method = $method;
         $this->messageId = $messageId;
-        $this->errorCode = $errorCode;
         $this->response = $response;
+        $this->errorCode = $errorCode;
     }
 
     public function get()
@@ -18,7 +18,6 @@ class ResponseObject
             'method'    => $this->method,
             'params'    => $this->response,
             'messageId' => $this->messageId,
-            'type'      => 1,
             'errorCode' => $this->errorCode
         ];
 
