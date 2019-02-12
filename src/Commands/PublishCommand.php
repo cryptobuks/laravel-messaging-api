@@ -68,7 +68,7 @@ class PublishCommand extends Command
         $content = $files->get(__DIR__ . '/../console/apiException.stub');
 
         $className = 'ApiException';
-        $path = app_path() . '/Exception';
+        $path = app_path() . '/Exceptions';
         if (!$files->isDirectory(($path))) {
             $files->makeDirectory(($path), 0777, true, true);
         }
