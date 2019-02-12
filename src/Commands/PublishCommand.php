@@ -65,7 +65,7 @@ class PublishCommand extends Command
     protected function createException()
     {
         $files = new Filesystem();
-        $content = $files->get(__DIR__ . '/../console/apiException.stub.stub');
+        $content = $files->get(__DIR__ . '/../console/apiException.stub');
 
         $className = 'ApiException';
         $path = app_path() . '/Exception';
